@@ -13,11 +13,16 @@ spec:
         app: web
     spec:
       containers:
-      - name: web
-        image: my-web-app:latest  # Or yourusername/my-web-app:latest
-        ports:
-        - containerPort: 80
-        imagePullPolicy: Never
+        - name: web
+          image: my-web-app:latest
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+            limits:
+              cpu: "200m"
+          imagePullPolicy: Never
 ---
 apiVersion: v1
 kind: Service
@@ -30,4 +35,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-  type: NodePort  # Expose externally
+  type: NodePort
