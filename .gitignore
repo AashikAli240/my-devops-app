@@ -38,3 +38,11 @@ dist/
 
 # Node (if frontend included)
 node_modules/
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+crash.log
+override.tf
+override.tf.json
+*.tfvars
