@@ -1,0 +1,6 @@
+---
+- name: Deploy Web App to Minikube
+  hosts: localhost  # Local machine
+  tasks:
+    - name: Apply Kubernetes Deployment
+      command: kubectl apply -f ../deployment.yaml  # Or use kubernetes.core module if installed
